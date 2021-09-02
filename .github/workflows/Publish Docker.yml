@@ -1,4 +1,4 @@
-name: Publish Docker Image
+name: Publish Docker Image(clash tun mode)
 on:
   push:
     branches:
