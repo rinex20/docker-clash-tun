@@ -6,6 +6,7 @@ RUN apk add --no-cache \
     ca-certificates  \
     bash  \
     curl \
+    ipset \
     iptables  \
     bash-doc  \
     bash-completion  \
