@@ -1,6 +1,15 @@
 From dreamacro/clash-premium:latest
 
-COPY entrypoint.sh /
+COPY entrypoint.sh /usr/local/bin/
 
-Entrypoint ["/entrypoint.sh"]
-CMD ["/clash"]
+RUN apk add --no-cache \
+    ca-certificates  \
+    bash  \
+    curl \
+    iptables  \
+    bash-doc  \
+    bash-completion  \
+    rm -rf /var/cache/apk/* && \
+    chmod a+x /usr/local/bin/entrypoint.sh
+
+Entrypoint ["entrypoint.sh"]
