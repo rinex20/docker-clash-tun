@@ -32,5 +32,7 @@ iptables -t mangle -I PREROUTING -m set ! --match-set localnetwork dst -j MARK -
 iptables -t nat -A PREROUTING -p tcp -i eth0 --dport 53 -j REDIRECT --to-ports 1053
 iptables -t nat -A PREROUTING -p udp -i eth0 --dport 53 -j REDIRECT --to-ports 1053
 
+iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE
+
 sysctl -w net/ipv4/ip_forward=1
 sysctl -w net.ipv4.conf.utun0.rp_filter=0
