@@ -1,5 +1,7 @@
 #!/bin/sh
 
+/clash
+
 # TUN Interface
 TUN_ADDR='198.18.0.1'
 TUN_NET='198.18.0.0/16'
@@ -7,7 +9,7 @@ TUN_DEV='utun'
 
 # MISC
 CLASH_TABLE='0x164'
-CLASH_USER='proxy'
+CLASH_USER='root'
 CLASH_UID=$(id -u "$CLASH_USER")
 MAIN_TABLE='main'
 
