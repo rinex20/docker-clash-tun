@@ -1,4 +1,4 @@
-From dreamacro/clash-premium:latest
+FROM dreamacro/clash-premium
 
 COPY entrypoint.sh /usr/local/bin/
 
