@@ -35,4 +35,4 @@ iptables -t nat -A PREROUTING -p udp -i eth0 --dport 53 -j REDIRECT --to-ports 1
 iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE
 
 sysctl -w net/ipv4/ip_forward=1
-sysctl -w net.ipv4.conf.utun0.rp_filter=0
+sysctl -w net.ipv4.conf.utun.rp_filter=0
