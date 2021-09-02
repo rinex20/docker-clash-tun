@@ -30,7 +30,7 @@ jobs:
         with:
           cond: ${{ steps.vars.outputs.branch == 'master' }}
           if_true: "rinex20/docker-clash-tun:latest"
-          if_false: "rinex20/clash-transparent-proxy-docker:${{ steps.vars.outputs.tag }}"
+          if_false: "rinex20/docker-clash-tun:${{ steps.vars.outputs.tag }}"
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
         with:
