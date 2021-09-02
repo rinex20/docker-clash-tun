@@ -13,3 +13,4 @@ RUN apk add --no-cache \
     chmod a+x /usr/local/bin/entrypoint.sh
 
 Entrypoint ["entrypoint.sh"]
+CMD ["/clash"]
