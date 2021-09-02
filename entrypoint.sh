@@ -29,8 +29,8 @@ iptables -t mangle -A CLASH -j MARK --set-mark 0x162
 iptables -t mangle -I OUTPUT -j CLASH
 iptables -t mangle -I PREROUTING -m set ! --match-set localnetwork dst -j MARK --set-mark 0x162
 
-iptables -t nat -A PREROUTING -p tcp -i eth0 --dport 53 -j REDIRECT --to-ports 1053
-iptables -t nat -A PREROUTING -p udp -i eth0 --dport 53 -j REDIRECT --to-ports 1053
+#iptables -t nat -A PREROUTING -p tcp -i eth0 --dport 53 -j REDIRECT --to-ports 1053
+#iptables -t nat -A PREROUTING -p udp -i eth0 --dport 53 -j REDIRECT --to-ports 1053
 
 iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE
 
