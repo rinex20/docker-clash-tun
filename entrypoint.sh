@@ -10,8 +10,8 @@ ipset add localnetwork 224.0.0.0/4
 ipset add localnetwork 240.0.0.0/4
 ipset add localnetwork 172.16.0.0/12
 
-ip tuntap add user root mode tun utun
-ip link set utun up
+#ip tuntap add user root mode tun utun
+#ip link set utun up
 
 ip route replace default dev utun table 0x162
 ip rule add fwmark 0x162 lookup 0x162
