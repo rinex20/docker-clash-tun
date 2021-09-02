@@ -1,6 +1,5 @@
 #!/bin/sh
 
-/clash
 
 # Based on https://github.com/Kr328/kr328-clash-setup-scripts/blob/master/setup-clash-tun.sh
 ipset create localnetwork hash:net
@@ -30,8 +29,8 @@ iptables -t mangle -A CLASH -j MARK --set-mark 0x162
 iptables -t mangle -I OUTPUT -j CLASH
 iptables -t mangle -I PREROUTING -m set ! --match-set localnetwork dst -j MARK --set-mark 0x162
 
-iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 1053
-iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 1053
+iptables -t nat -A PREROUTING -p tcp -i eth0 --dport 53 -j REDIRECT --to-ports 1053
+iptables -t nat -A PREROUTING -p udp -i eth0 --dport 53 -j REDIRECT --to-ports 1053
 
 sysctl -w net/ipv4/ip_forward=1
 sysctl -w net.ipv4.conf.utun0.rp_filter=0
