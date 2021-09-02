@@ -1,5 +1,7 @@
 #!/bin/sh
 
+/clash
+
 # Based on https://github.com/Kr328/kr328-clash-setup-scripts/blob/master/setup-clash-tun.sh
 ipset create localnetwork hash:net
 ipset add localnetwork 127.0.0.0/8
